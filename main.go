@@ -1,13 +1,9 @@
 package main
 
 import (
-	//"crypto/tls"
 	"flag"
 	"fmt"
-	//"io/ioutil"
 	"net/http"
-	//"os"
-	//"strings"
 	"encoding/json"	
 	"bytes"
 )
@@ -34,8 +30,8 @@ func main() {
 	//flag.BoolVar(&debug, "debug", false, "Display debug logs with -debug option")
 	
 	flag.Parse()
-	fmt.Println("username", user)
-	fmt.Println("message", message)
+	//fmt.Println("username", user)
+	//fmt.Println("message", message)
 	
 	myMsg := Message{Username:user,Content:message}
 	b, err := json.Marshal(myMsg)
@@ -46,7 +42,6 @@ func main() {
 	//os.Stdout.Write(b)
 	SendMessage(api, string(b))
 }
-
 
 func SendMessage(api string, jsonData string) {
 
