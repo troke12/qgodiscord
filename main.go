@@ -9,31 +9,19 @@ import (
 )
 
 type Message struct {
-	Username string `json:"username"`
     Content string `json:"content"`
 }
 
 func main() {
 
-	//Discord webhook api url flag
-	var api string
-	flag.StringVar(&api, "a", "",  "Discord webhook URL of server to send message to")
+	api := "MASUKIN_WEBHOOK_TOKEN"
 	
 	var message string
 	flag.StringVar(&message, "m", "", "Message to send")
-	
-	var user string
-	flag.StringVar(&user, "u", "Captain Hook", "Discord Username")
-	
-	//debug flags
-	//var debug bool
-	//flag.BoolVar(&debug, "debug", false, "Display debug logs with -debug option")
-	
+		
 	flag.Parse()
-	//fmt.Println("username", user)
-	//fmt.Println("message", message)
-	
-	myMsg := Message{Username:user,Content:message}
+
+	myMsg := Message{Content:message}
 	b, err := json.Marshal(myMsg)
 	
 	if err != nil {
