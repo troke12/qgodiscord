@@ -7,4 +7,9 @@ go build
 go install  
 
 # Usage
-qgodiscord -u "username" - m "message to send" -a discordWebhookUrl
+qgodiscord -m "message"
+
+# Screenshot
+
+![ss1](https://cdn.discordapp.com/attachments/408950289962369025/726237206389456916/unknown.png)
+![ss2](https://cdn.discordapp.com/attachments/408950289962369025/726237259182899240/unknown.png)
